@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient( 45deg,lightgrey,white);
+}
+.book{
+    width: 200px;
+    height: 300px;
+    background-color: #fff;
+    perspective: 1000px;
+    position: relative;
+    transform: rotate(1.5deg) skewX(5deg);
+    box-shadow: -35px 35px 50px rgba(0,0,0,1);
+    transition: 0.5s;
+}
+/* .book:hover{
+    box-shadow: -50px 50px 100px rgba(0,0,0,1);
+} */
+.book::before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    transform: skewY(-45deg) translate(-30px,-15px);
+}
+.book::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background-color: #ccc;
+    bottom: 0;
+    left: 0;
+    transform: skewX(-45deg) translate(15px,30px);
+}
+.pages{
+    transform-style: preserve-3d;
+}
+.pages .page1{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    transition: 0.5s;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    z-index: 1;
+
+}
+.page1.page1Active{
+    transform: rotateY(-180deg);
+}
+.pages .page1 .front,
+.pages .page2 .front,
+.pages .page3 .front,
+.pages .page4 .front,
+.pages .page5 .front,
+.pages .page6 .front
+{
+    width: 200px;
+    height: 300px;
+    backface-visibility: hidden;
+    position: absolute;
+    background-color: lightblue;
+}
+.pages .page1 .front .text,
+.pages .page2 .front .text,
+.pages .page3 .front .text,
+.pages .page4 .front .text,
+.pages .page5 .front .text,
+.pages .page6 .front .text{
+       text-align: center;
+    font-size: 30px;
+    margin-top: 100px;
+}
+.pages .page1 .back,
+.pages .page2 .back,
+.pages .page3 .back,
+.pages .page4 .back,
+.pages .page5 .back{
+    width: 200px;
+    height: 300px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    position: absolute;
+    background-color: lightblue;
+}
+
+.pages .page2{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    transition: 0.5s;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+.pages .page2 .front,
+.pages .page2 .back{
+    background-color: orange;
+    color: white;
+}
+.pages .page2 .back .description,
+.pages .page3 .back .description,
+.pages .page4 .back .description,
+.pages .page5 .back .description
+{
+    margin: 15px;
+}
+.page2.page2Active{
+    transform: rotateY(-180deg);
+    z-index: 2;
+}
+
+.pages .page3{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    transition: 0.5s;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    z-index: -2;
+}
+.page3.page3Active{
+    transform: rotateY(-180deg);
+    z-index: 3;
+}
+.pages .page3 .front,
+.pages .page3 .back{
+    background-color: blue;
+    color: white;
+}
+
+.pages .page4{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    transition: 0.5s;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    z-index: -3;
+}
+.page4.page4Active{
+    transform: rotateY(-180deg);
+    z-index: 4;
+}
+.pages .page4 .front,
+.pages .page4 .back{
+    background-color: #ffd133;
+    color: white;
+}
+
+.pages .page5{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    transition: 0.5s;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    z-index: -4;
+}
+.page5.page5Active{
+    transform: rotateY(-180deg);
+    z-index: 5;
+}
+.pages .page5 .front,
+.pages .page5 .back{
+    background-color: blueviolet;
+    color: white;
+}
+
+.pages .page6{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    transition: 0.5s;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    z-index: -5;
+}
+.pages .page6 .front{
+    background-color: white;
+    color: black;
+}
