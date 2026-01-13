@@ -63,6 +63,12 @@ This project simulates a real book where pages flip in 3D space, just like a phy
 
 ---
 
+🌐 Live Demo
+
+If GitHub Pages is not working, you can view the live project here:
+
+👉 Netlify Live URL:https://simple3dbook.netlify.app/
+
 ## 🚀 Future Enhancements
 
 * Click-based page navigation
